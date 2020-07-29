@@ -1,0 +1,122 @@
+/*Name= Alp Yuksektepe
+  email=omer_yuksektepe@student.uml.edu
+ 
+ */
+
+
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+
+#wrapper {
+  background-color: #83bed4;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 600px;
+  max-width: 2040px; 
+  width: 80%;
+  box-shadow: 3px 2px 5px 0px black;
+}
+
+body {
+	
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	background: linear-gradient(to bottom, rgba(0, 86, 159, 0), rgba(0, 86, 159, 1)) fixed;
+	background-image: no-repeat;
+	background-size: cover;
+}
+header {
+	background-color: #000033;
+	color: white;
+	background-image: url(sunset.jpg);
+	background-position: right;
+	background-repeat: no-repeat;
+	text-align: left;
+	height: 55px;
+	padding-top:20px;
+}
+
+h1 {
+	margin-bottom: 0;
+	margin-top:0;
+	
+	
+}
+
+nav {
+	float:left;
+	width:150px;
+	padding:20px;
+	font-weight: bold;
+	
+}
+
+nav ul {
+	list-style-type:none;
+	margin:0;
+	font-size:1.2em;
+	
+}
+
+nav a {
+	text-decoration: none;
+
+}
+nav a:link {
+color: #000033
+}
+nav a:visited {
+	color: #000033;
+}
+nav a:hover {
+	color: #ffffff;
+}
+
+img{ 
+	display: block;
+	float:left;
+	padding-right:20px;
+	
+}
+
+
+#content { 
+	display:block;
+	background-color: white;
+	margin-left: 200px;
+	padding:1px 20px 20px 30px;
+	
+}
+
+
+#content ul {
+	list-style-image: url(marker.gif);
+	
+}
+
+
+h2 {
+	color: #3399CC;
+	font-style: bold;
+	font-size: 25px;
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+
+.resort {
+	color: #5c7fa3;
+	font-weight: bold;
+}
+
+
+footer {
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+	text-align: left;
+	font-size: 70%;
+	padding:20px;
+	background-color: white;
+	margin-left: 200px;
+}
+
