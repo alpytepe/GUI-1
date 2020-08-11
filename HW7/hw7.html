@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <!--
+    Name: Alp Yuksektepe
+	email: omer_yuksektepe@student.uml.edu
+	Assignment 7
+	GUI Programming 1 
+	Purpose: 
+	Implement sliders using jquery libraries and adding a tabbed interface that stores
+	the saved tables
+ -->
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Alp.com</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/dark-hive/jquery-ui.min.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style=" background-color: #67AEEB;">
+  <a class="navbar-brand" href="./home.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon" style= "width: 50px; height: 50px;" ></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="./aboutme.html">About Me<span class="sr-only">(current)</span></a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link" href="./contactme.html">Contact Me<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Homeworks
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="./HW3/index.html" target= "_blank">HW3</a>
+		  <a class="dropdown-item" href="hw5.html" >HW5</a>
+		  <a class="dropdown-item" href="hw5.html" >HW6</a>
+		  <a class="dropdown-item" href="hw7.html" >HW7</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+ 
+    <!-- First row - Assignment description -->
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Assignment #8</h1>
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="center">Enter four numbers (from -20 to 20) to generate a dynamic multiplication table.</div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+    <br>
+
+    <!-- form goes here, along with current multiplication table -->
+    <div class="row">
+      <div class="col-md-1"></div>
+
+      <!-- FIRST COLUMN: USER INPUT -->
+      <div class="col-md-5">
+        <!-- Form to take user input.
+        I used the following site for help with the form:
+        http://www.w3schools.com/html/html_forms.asp
+		-->
+
+        <div class="inputs">
+          <form id="mult_form" name="mult_form" method="GET">
+            <div>
+              <label>Starting horizontal number: </label>
+              <input type="number" id="horiz_start" name="horiz_start" value="0" required>
+              <div id="slider_h_start"></div>
+            </div>
+
+            <div>
+              <label>Ending horizontal number: </label>
+              <input type="number" id="horiz_end" name="horiz_end" value="0" required>
+              <div id="slider_h_end"></div>
+            </div>
+
+            <div>
+              <label>Starting vertical number: </label>
+              <input type="number" id="v_start" name="vert_start" value="0" required>
+              <div id="slider_v_start"></div>
+            </div>
+
+            <div>
+              <label>Ending vertical number: </label>
+              <input type="number" id="v_end" name="vert_end" value="0" required>
+              <div id="slider_v_end"></div>
+            </div>
+            <input id="button_submit" class="submit_button" type="submit" onClick="save_tab();" value="Save Table">
+          </form>
+
+          <div id="warning_msg"></div>
+
+        </div>
+      </div>
+
+      <!--CURRENT MULTIPLICATION TABLE -->
+      <div class="col-md-12 col-sm-12">
+        <!-- The CURRENT multiplication table will appear in this div -->
+        <div id="multiplication_table"></div>
+      </div>
+
+      <div class="col-md-1"></div>
+    </div>
+
+    <br><br>             
+
+    <div class="row">
+      <div class="col-md-1"></div>
+
+      <!-- PAST MULTIPLICATION TABLES -->
+      <div class="col-md-10">
+        <div class="center_text">If you press "Save Table" up to 5 tables will be stored below.</div>
+
+        <br><br>              <!-- Adding line breaks to make the display nicer. -->
+
+        <!-- Old Tables will be saved here -->
+        <div id="tabs">
+          <ul>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-1"></div>
+    </div>
+
+    <br><br><br>               <!-- Adding line breaks to make the display nicer. -->
+
+   
+
+  
+
+  </div>          <!-- This should be the end div of the main container. -->
+
+  <!--
+      I started putting my scripts at the bottom, since it's better practice
+      https://stackoverflow.com/questions/38407962/when-to-use-the-script-tag-in-the-head-and-body-section-of-a-html-page/38408000
+   -->
+
+  <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+  <script type='text/javascript' src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/additional-methods.js"></script>
+  <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script type='text/javascript' src="hw7table.js"></script>
+  <script>
+    
+    $( document ).ready(function() {
+        slider();           // Runs the slider code.
+        validate();         // Runs the validate code 
+        auto_submit();      // submits form to generates a table.
+    });
+  </script>
+
+</body>
+</html>

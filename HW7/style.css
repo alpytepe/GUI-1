@@ -1,0 +1,90 @@
+body {
+	background: linear-gradient(to top, rgb(187, 151, 219), rgb(103, 174, 235)) fixed;
+	margin-left: 20px;
+}
+
+h1 {
+	
+	font-size: 200%;
+}
+
+.center_text {
+  color: white;
+  font-size: 150%;
+  font-weight: 500;
+  margin: 10px;
+  text-align: center;
+}
+
+div#multiplication_table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+tbody {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+ 
+}
+
+
+tbody > tr > td {
+  border: 3px solid black;
+  color: black;
+  height: 50px;
+  font-size: 100%;
+  font-weight: 200;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Style the very top row. */
+tbody > tr:first-child > td {
+  background-color: #E77777;
+  color: white;
+}
+
+/* Style the left most column. */
+tbody > tr > td:first-child {
+  background-color: #E77777;
+  color: white;
+}
+
+#warning_msg {
+  color: red;
+  font-size: 70%;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.error {
+  color: red;
+  font-size: 60%;
+  font-style: italic;
+  font-weight: 900;
+  text-align: center;
+}
+
+.inputs {
+	text-align: center;
+}
+
+.center {
+	text-align:center;
+	color: white;
+	font-size: 125%;
+}
+
+.center_text {
+	text-align: center;
+	color: white;
+}
+	
